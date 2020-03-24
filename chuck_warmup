@@ -1,0 +1,26 @@
+die_rolls = np.random.choice([1, 2, 3, 4, 5, 6], size = (10_000, 3))
+
+lucky_number = 5
+
+rolls = pd.DataFrame(die_rolls)
+
+rolls.rename(columns = {0: 'first', 1: 'second', 2 : 'third'}, inplace = True)
+
+def get_matches(row):
+    matches = 0
+    if(row[0] == lucky_number):
+        matches += 1
+    if(row[1] == lucky_number):
+        matches += 1
+    if(row[2] == lucky_number):
+        matches += 1
+    return matches
+
+rolls['number_of_matches'] = rolls.apply(get_matches, axis = 1)
+
+rolls['cost_to_play'] = 1
+rolls['winnings'] = rolls['number_of_matches'] - rolls['cost_to_play']
+
+rolls.winnings.value_counts(normalize=True)
+
+rolls
