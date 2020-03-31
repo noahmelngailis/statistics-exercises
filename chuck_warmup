@@ -24,3 +24,6 @@ rolls['winnings'] = rolls['number_of_matches'] - rolls['cost_to_play']
 rolls.winnings.value_counts(normalize=True)
 
 rolls
+
+
+6k4 or 4k6
