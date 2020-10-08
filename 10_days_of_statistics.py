@@ -37,3 +37,15 @@ n = int(input())
 p = num/den
 
 print(round((1-p)**(n-1)*p, 3))
+
+# Day 4 Geometric Distribution II
+num, dem = list(map(int, input().split(" ")))
+n = int(input())
+
+p = num / dem
+
+print(round((1-(1-p)**n), 3))
+
+# Day 5 Poisson distribution
+
+# Here is where the poisson distribution answer will go
