@@ -48,4 +48,19 @@ print(round((1-(1-p)**n), 3))
 
 # Day 5 Poisson distribution
 
-# Here is where the poisson distribution answer will go
+import math
+
+# equation l^k * e^-l / k!
+
+def fact(n):
+    if n == 0:
+        return 1
+    else:
+        return n * fact(n-1)
+
+l = float(input())
+k = float(input())
+
+prob = ((l**k)*math.exp(-l))/fact(k)
+
+print(round(prob, 3))
