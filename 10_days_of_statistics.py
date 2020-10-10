@@ -126,3 +126,21 @@ std_prime = math.sqrt(n) * std
 cdf = lambda x: 0.5 * (1 + math.erf((x - mean_prime) / (std_prime * (2 ** 0.5))))
 
 print(round(cdf(9800), 4))
+
+# Day 6 Central Limit Theroem II
+
+import math
+
+# inputs
+x = 250
+n = 100
+mean = 2.4
+std = 2.0
+ 
+# Using CLT 
+mean_prime = n * mean
+std_prime = math.sqrt(n) * std
+
+cdf = lambda x: 0.5 * (1 + math.erf((x - mean_prime) / (std_prime * (2 ** 0.5))))
+
+print(round(cdf(x), 4))
